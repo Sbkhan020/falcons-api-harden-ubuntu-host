@@ -1,0 +1,4 @@
+# Sudo hardening — Task 1
+# No password-less sudo for normal users; sudo password is asked again after 5 minutes.
+Defaults timestamp_timeout=5
+Defaults use_pty

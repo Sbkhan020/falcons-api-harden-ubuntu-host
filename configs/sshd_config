@@ -1,0 +1,19 @@
+# Hardened sshd_config — Task 1, Ubuntu 22.04
+# Based on /etc/ssh/sshd_config, only the security-relevant settings changed.
+# Install: sudo cp configs/sshd_config /etc/ssh/sshd_config && sudo systemctl restart sshd
+Port 22
+Protocol 2
+HostKey /etc/ssh/ssh_host_rsa_key
+HostKey /etc/ssh/ssh_host_ed25519_key
+PermitRootLogin prohibit-password
+PubkeyAuthentication yes
+PasswordAuthentication no
+ChallengeResponseAuthentication no
+UsePAM yes
+X11Forwarding no
+AllowTcpForwarding no
+ClientAliveInterval 300
+ClientAliveCountMax 2
+MaxAuthTries 3
+LoginGraceTime 30
+PermitEmptyPasswords no
